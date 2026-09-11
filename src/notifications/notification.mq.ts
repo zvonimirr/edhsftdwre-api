@@ -19,7 +19,7 @@ export function createNotificationCreatedEvent(
   return {
     type: JobQueueTask.NOTIFICATION_CREATED,
     payload: {
-      id: notification.id.toString(),
+      id: notification._id.toString(),
       userId: notification.userId,
       message: notification.message,
     },
