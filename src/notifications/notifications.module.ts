@@ -8,7 +8,6 @@ import {
 } from '@/notifications/notification.schema';
 import { NotificationsController } from '@/notifications/notifications.controller';
 import { JobQueueModule } from '@/job-queue/job-queue.module';
-import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [
@@ -16,7 +15,6 @@ import { PassportModule } from '@nestjs/passport';
       { name: Notification.name, schema: NotificationSchema },
     ]),
     JobQueueModule,
-    PassportModule.register({ defaultStrategy: 'jwt' }),
   ],
   providers: [NotificationsGateway, NotificationsService],
   controllers: [NotificationsController],

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from '@/auth/auth.service';
@@ -9,10 +9,11 @@ import { ConfigModule } from '@nestjs/config';
 import { VerificationModule } from '@/verification/verification.module';
 import { JobQueueModule } from '@/job-queue/job-queue.module';
 
+@Global()
 @Module({
   imports: [
     ConfigModule,
-    PassportModule,
+    PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: process.env.JWT_SECRET,
       signOptions: { expiresIn: '1d' },
@@ -23,5 +24,6 @@ import { JobQueueModule } from '@/job-queue/job-queue.module';
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
+  exports: [PassportModule],
 })
 export class AuthModule {}
