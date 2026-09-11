@@ -7,7 +7,7 @@ services:
       - '8025:8025'
 
   mongodb:
-    image: mongo:latest
+    image: mongo:7
     container_name: mongodb
     restart: always
     ports:
