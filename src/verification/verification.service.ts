@@ -1,8 +1,8 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { VerificationCode } from './verification.schema';
+import { VerificationCode } from '@/verification/verification.schema';
 import { Model } from 'mongoose';
-import { User } from 'src/users/user.schema';
+import { User } from '@/users/user.schema';
 import { randomUUID } from 'crypto';
 import { Cron } from '@nestjs/schedule';
 

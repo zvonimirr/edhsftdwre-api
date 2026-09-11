@@ -1,8 +1,8 @@
 import { Controller, Post, Body, Param, Get, UseGuards } from '@nestjs/common';
-import { NotificationsService } from './notifications.service';
-import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
-import { JobQueueService } from 'src/job-queue/job-queue.service';
-import { createNotificationCreatedEvent } from './notification.mq';
+import { NotificationsService } from '@/notifications/notifications.service';
+import { JwtAuthGuard } from '@/auth/jwt-auth.guard';
+import { JobQueueService } from '@/job-queue/job-queue.service';
+import { createNotificationCreatedEvent } from '@/notifications/notification.mq';
 
 @Controller('notifications')
 export class NotificationsController {

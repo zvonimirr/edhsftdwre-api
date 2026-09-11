@@ -7,15 +7,15 @@ import {
   MQ_EXCHANGE,
   MQ_QUEUE,
   MQ_ROUTING_KEY,
-} from './job-queue.constants';
+} from '@/job-queue/job-queue.constants';
 import { MailerService } from '@nestjs-modules/mailer';
-import { UsersService } from 'src/users/users.service';
-import { NotificationCreatedEventSchema } from 'src/notifications/notification.mq';
+import { UsersService } from '@/users/users.service';
+import { NotificationCreatedEventSchema } from '@/notifications/notification.mq';
 import {
   UserRegisteredEventSchema,
   UserVerifiedEventSchema,
-} from 'src/users/user.mq';
-import { VerificationService } from 'src/verification/verification.service';
+} from '@/users/user.mq';
+import { VerificationService } from '@/verification/verification.service';
 
 @Injectable()
 export class JobQueueService {

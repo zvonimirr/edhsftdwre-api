@@ -33,7 +33,7 @@ export default [{
 
         parserOptions: {
             project: "tsconfig.json",
-            tsconfigRootDir: "/Users/zvonimir/Projects/Personal/notification-system",
+            tsconfigRootDir: __dirname,
         },
     },
 

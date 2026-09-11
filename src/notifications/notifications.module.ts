@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
-import { NotificationsGateway } from './notifications.gateway';
-import { NotificationsService } from './notifications.service';
+import { NotificationsGateway } from '@/notifications/notifications.gateway';
+import { NotificationsService } from '@/notifications/notifications.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Notification, NotificationSchema } from './notification.schema';
-import { NotificationsController } from './notifications.controller';
-import { JobQueueModule } from 'src/job-queue/job-queue.module';
+import {
+  Notification,
+  NotificationSchema,
+} from '@/notifications/notification.schema';
+import { NotificationsController } from '@/notifications/notifications.controller';
+import { JobQueueModule } from '@/job-queue/job-queue.module';
 
 @Module({
   imports: [

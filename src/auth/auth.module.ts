@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { AuthService } from './auth.service';
-import { UsersModule } from '../users/users.module';
-import { AuthController } from './auth.controller';
-import { JwtStrategy } from './jwt.strategy';
+import { AuthService } from '@/auth/auth.service';
+import { UsersModule } from '@/users/users.module';
+import { AuthController } from '@/auth/auth.controller';
+import { JwtStrategy } from '@/auth/jwt.strategy';
 import { ConfigModule } from '@nestjs/config';
-import { VerificationModule } from 'src/verification/verification.module';
-import { JobQueueModule } from 'src/job-queue/job-queue.module';
+import { VerificationModule } from '@/verification/verification.module';
+import { JobQueueModule } from '@/job-queue/job-queue.module';
 
 @Module({
   imports: [

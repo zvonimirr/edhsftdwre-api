@@ -1,9 +1,9 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { User } from './user.schema';
+import { User } from '@/users/user.schema';
 import { hash } from 'bcryptjs';
-import { LoginDto } from 'src/auth/dto/login.dto';
+import { LoginDto } from '@/auth/dto/login.dto';
 import { Cron } from '@nestjs/schedule';
 
 @Injectable()

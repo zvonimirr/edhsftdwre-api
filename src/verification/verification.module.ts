@@ -3,8 +3,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import {
   VerificationCode,
   VerificationCodeSchema,
-} from './verification.schema';
-import { VerificationService } from './verification.service';
+} from '@/verification/verification.schema';
+import { VerificationService } from '@/verification/verification.service';
 
 @Module({
   imports: [

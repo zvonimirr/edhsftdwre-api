@@ -1,10 +1,10 @@
 import { RabbitMQModule } from '@golevelup/nestjs-rabbitmq';
 import { Module } from '@nestjs/common';
-import { MQ_CHANNEL, MQ_EXCHANGE } from './job-queue.constants';
-import { JobQueueService } from './job-queue.service';
-import { UsersModule } from 'src/users/users.module';
+import { MQ_CHANNEL, MQ_EXCHANGE } from '@/job-queue/job-queue.constants';
+import { JobQueueService } from '@/job-queue/job-queue.service';
+import { UsersModule } from '@/users/users.module';
 import { ConfigModule } from '@nestjs/config';
-import { VerificationModule } from 'src/verification/verification.module';
+import { VerificationModule } from '@/verification/verification.module';
 
 @Module({
   imports: [

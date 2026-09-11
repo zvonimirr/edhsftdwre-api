@@ -1,14 +1,14 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { UsersService } from 'src/users/users.service';
-import { AuthService } from './auth.service';
-import { LoginDto } from './dto/login.dto';
-import { VerificationService } from 'src/verification/verification.service';
-import { VerifyDto } from './dto/verify.dto';
+import { UsersService } from '@/users/users.service';
+import { AuthService } from '@/auth/auth.service';
+import { LoginDto } from '@/auth/dto/login.dto';
+import { VerificationService } from '@/verification/verification.service';
+import { VerifyDto } from '@/auth/dto/verify.dto';
 import {
   createUserRegisterEvent,
   createUserVerifiedEvent,
-} from 'src/users/user.mq';
-import { JobQueueService } from 'src/job-queue/job-queue.service';
+} from '@/users/user.mq';
+import { JobQueueService } from '@/job-queue/job-queue.service';
 
 @Controller('auth')
 export class AuthController {

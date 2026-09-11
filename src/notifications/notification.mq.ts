@@ -1,8 +1,5 @@
-import {
-  JobQueueSchema,
-  JobQueueTask,
-} from 'src/job-queue/job-queue.constants';
-import { Notification } from './notification.schema';
+import { JobQueueSchema, JobQueueTask } from '@/job-queue/job-queue.constants';
+import { Notification } from '@/notifications/notification.schema';
 import { z } from 'zod';
 
 export const NotificationCreatedEventSchema = JobQueueSchema.extend({

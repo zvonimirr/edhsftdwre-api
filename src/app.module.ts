@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
-import { NotificationsModule } from './notifications/notifications.module';
-import { AuthModule } from './auth/auth.module';
+import { UsersModule } from '@/users/users.module';
+import { NotificationsModule } from '@/notifications/notifications.module';
+import { AuthModule } from '@/auth/auth.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { VerificationModule } from './verification/verification.module';
+import { VerificationModule } from '@/verification/verification.module';
 import { ScheduleModule } from '@nestjs/schedule';
-import { JobQueueModule } from './job-queue/job-queue.module';
+import { JobQueueModule } from '@/job-queue/job-queue.module';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { EjsAdapter } from '@nestjs-modules/mailer/adapters/ejs.adapter';
-import { MiscModule } from './misc/misc.module';
+import { MiscModule } from '@/misc/misc.module';
 
 @Module({
   imports: [

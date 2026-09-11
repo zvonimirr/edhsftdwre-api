@@ -1,5 +1,5 @@
 import { Controller, Get, Param, Res } from '@nestjs/common';
-import { ImageService } from './image.service';
+import { ImageService } from '@/image/image.service';
 import { Response } from 'express';
 
 @Controller('image')
