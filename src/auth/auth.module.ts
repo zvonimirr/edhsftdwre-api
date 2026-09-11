@@ -1,4 +1,4 @@
-import { Global, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from '@/auth/auth.service';
@@ -9,7 +9,6 @@ import { ConfigModule } from '@nestjs/config';
 import { VerificationModule } from '@/verification/verification.module';
 import { JobQueueModule } from '@/job-queue/job-queue.module';
 
-@Global()
 @Module({
   imports: [
     ConfigModule,
