@@ -11,7 +11,7 @@ import { VerificationModule } from 'src/verification/verification.module';
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    RabbitMQModule.forRoot(RabbitMQModule, {
+    RabbitMQModule.forRoot({
       uri: process.env.RABBITMQ_URL,
       exchanges: [
         {
