@@ -23,9 +23,7 @@ export class AuthController {
   async register(@Body() body: LoginDto) {
     const user = await this.usersService.createUser(body);
     const code = await this.verificationService.createVerificationCode(user);
-    await this.jobQueueService.sendTaskMessage(
-      createUserRegisterEvent(user, code),
-    );
+    this.jobQueueService.sendTaskMessage(createUserRegisterEvent(user, code));
 
     return user;
   }
@@ -34,7 +32,7 @@ export class AuthController {
   async verify(@Body() { code }: VerifyDto) {
     const user = await this.verificationService.getUserByCode(code);
     const verifiedUser = await this.usersService.verifyUser(user);
-    await this.jobQueueService.sendTaskMessage(
+    this.jobQueueService.sendTaskMessage(
       createUserVerifiedEvent(verifiedUser, code),
     );
 

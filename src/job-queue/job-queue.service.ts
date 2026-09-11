@@ -144,13 +144,13 @@ export class JobQueueService implements OnModuleInit, OnModuleDestroy {
     }
   }
 
-  public sendTaskMessage(msg: unknown) {
-    this.logger.log(`Sending message: ${JSON.stringify(msg)}`);
+  public sendTaskMessage(message: unknown) {
+    this.logger.log(`Sending message: ${JSON.stringify(message)}`);
 
     this.channel.publish(
       MQ_EXCHANGE,
       MQ_ROUTING_KEY,
-      Buffer.from(JSON.stringify(msg)),
+      Buffer.from(JSON.stringify(message)),
       {
         persistent: true,
         contentType: 'application/json',
