@@ -82,5 +82,9 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage"
+  },
+  "allowScripts": {
+    "@nestjs/core@10.4.6": true,
+    "fsevents@2.3.3": true
   }
 }

@@ -44,6 +44,6 @@ export class MiscController {
 
   @Get('palindrome/:message')
   async getPalindrome(@Param('message') message: string) {
-    return this.palindromeService.getPalindrome(message);
+    return this.palindromeService.getIsPalindrome(message);
   }
 }
