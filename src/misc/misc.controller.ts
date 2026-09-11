@@ -5,6 +5,7 @@ import { EchoService } from './echo.service';
 import { IsEvenService } from './is-even.service';
 import { IsOddService } from './is-odd.service';
 import { PalindromeService } from './palindrome.service';
+import { UUIDService } from './uuid.service';
 
 @Controller('misc')
 export class MiscController {
@@ -15,6 +16,7 @@ export class MiscController {
     private readonly isEvenService: IsEvenService,
     private readonly isOddService: IsOddService,
     private readonly palindromeService: PalindromeService,
+    private readonly uuidService: UUIDService,
   ) {}
 
   @Get('fizzbuzz/:number')
@@ -45,5 +47,10 @@ export class MiscController {
   @Get('palindrome/:message')
   async getPalindrome(@Param('message') message: string) {
     return this.palindromeService.getIsPalindrome(message);
+  }
+
+  @Get('uuid/v4')
+  async getUUIDv4() {
+    return this.uuidService.getV4();
   }
 }
